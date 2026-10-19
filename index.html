@@ -1,0 +1,938 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HOUSE OF FADE | Premium Barber Shop Dubai</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        gold: {
+                            100: '#FDF8E2',
+                            300: '#F3E5AB',
+                            400: '#E5C158',
+                            500: '#D4AF37',
+                            600: '#AA820A',
+                            700: '#806000',
+                        },
+                        obsidian: '#0A0A0C',
+                        charcoal: '#121216',
+                        cardDark: 'rgba(20, 20, 26, 0.75)'
+                    },
+                    fontFamily: {
+                        cinzel: ['Cinzel', 'serif'],
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                    },
+                    boxShadow: {
+                        'gold-glow': '0 0 25px -5px rgba(212, 175, 55, 0.3)',
+                        'gold-glow-lg': '0 0 40px -5px rgba(212, 175, 55, 0.5)',
+                        'inner-gold': 'inset 0 0 15px rgba(212, 175, 55, 0.15)'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Custom scrollbar & luxury styling */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0A0A0C;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #2A2A35;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #D4AF37;
+        }
+        
+        .gold-gradient-text {
+            background: linear-gradient(135deg, #FFF0B3 0%, #D4AF37 50%, #997A15 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .gold-border-glow {
+            border: 1px solid rgba(212, 175, 55, 0.25);
+            transition: all 0.3s ease;
+        }
+        .gold-border-glow:hover {
+            border-color: rgba(212, 175, 55, 0.75);
+            box-shadow: 0 0 20px rgba(212, 175, 55, 0.25);
+        }
+
+        .glass-panel {
+            background: rgba(18, 18, 24, 0.75);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.07);
+        }
+
+        .hero-bg {
+            background: linear-gradient(to bottom, rgba(10, 10, 12, 0.65), rgba(10, 10, 12, 0.95)), 
+                        url('https://images.unsplash.com/photo-1503951914875-452162b0f3f1?q=80&w=2070&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
+        }
+    </style>
+</head>
+<body class="bg-obsidian text-gray-200 font-sans selection:bg-gold-500 selection:text-black min-h-screen flex flex-col">
+
+    <!-- Header Navigation -->
+    <header class="fixed top-0 left-0 right-0 z-40 glass-panel border-b border-white/10 transition-all duration-300" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <!-- Brand Logo -->
+            <a href="#" class="flex items-center space-x-3 group">
+                <div class="w-10 h-10 rounded-full border border-gold-500/50 flex items-center justify-center bg-black/50 group-hover:border-gold-500 transition-colors shadow-gold-glow">
+                    <i class="fa-solid font-cinzel text-gold-500 font-bold text-lg">H</i>
+                </div>
+                <div>
+                    <span class="font-cinzel text-xl sm:text-2xl font-bold tracking-wider text-white block">HOUSE OF FADE</span>
+                    <span class="text-[10px] tracking-[0.2em] text-gold-400 uppercase font-medium block">Dubai · Barber Shop</span>
+                </div>
+            </a>
+
+            <!-- Desktop Nav Links -->
+            <nav class="hidden md:flex items-center space-x-8 text-sm uppercase tracking-widest font-medium">
+                <a href="#about" class="text-gray-300 hover:text-gold-400 transition-colors">About</a>
+                <a href="#services" class="text-gray-300 hover:text-gold-400 transition-colors">Services</a>
+                <a href="#barbers" class="text-gray-300 hover:text-gold-400 transition-colors">Barbers</a>
+                <a href="#reviews" class="text-gray-300 hover:text-gold-400 transition-colors">Reviews</a>
+                <a href="#location" class="text-gray-300 hover:text-gold-400 transition-colors">Location</a>
+            </nav>
+
+            <!-- CTA Header Button -->
+            <div class="hidden sm:flex items-center space-x-4">
+                <a href="tel:+971564177776" class="text-xs text-gold-400 hover:text-white flex items-center gap-2 border border-gold-500/30 px-3 py-2 rounded-full transition-all hover:border-gold-500">
+                    <i class="fa-solid fa-phone"></i>
+                    <span>+971 56 417 7776</span>
+                </a>
+                <button onclick="openBookingModal()" class="bg-gradient-to-r from-gold-600 to-gold-400 hover:from-gold-500 hover:to-gold-300 text-black font-semibold text-xs tracking-wider uppercase px-5 py-2.5 rounded-full shadow-gold-glow hover:shadow-gold-glow-lg transition-all duration-300 transform hover:-translate-y-0.5">
+                    Book Now
+                </button>
+            </div>
+
+            <!-- Mobile menu button -->
+            <button onclick="toggleMobileMenu()" class="md:hidden text-gray-300 hover:text-white focus:outline-none p-2">
+                <i class="fa-solid fa-bars text-xl" id="menuIcon"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Navigation Menu -->
+        <div id="mobileMenu" class="hidden md:hidden glass-panel border-t border-white/10 px-4 pt-4 pb-6 space-y-3">
+            <a href="#about" onclick="toggleMobileMenu()" class="block text-gray-300 hover:text-gold-400 py-2 text-sm uppercase tracking-wider">About</a>
+            <a href="#services" onclick="toggleMobileMenu()" class="block text-gray-300 hover:text-gold-400 py-2 text-sm uppercase tracking-wider">Services</a>
+            <a href="#barbers" onclick="toggleMobileMenu()" class="block text-gray-300 hover:text-gold-400 py-2 text-sm uppercase tracking-wider">Barbers</a>
+            <a href="#reviews" onclick="toggleMobileMenu()" class="block text-gray-300 hover:text-gold-400 py-2 text-sm uppercase tracking-wider">Reviews</a>
+            <a href="#location" onclick="toggleMobileMenu()" class="block text-gray-300 hover:text-gold-400 py-2 text-sm uppercase tracking-wider">Location</a>
+            <div class="pt-4 border-t border-white/10 flex flex-col gap-3">
+                <a href="tel:+971564177776" class="text-center text-xs text-gold-400 border border-gold-500/30 py-2.5 rounded-full">
+                    <i class="fa-solid fa-phone mr-2"></i>+971 56 417 7776
+                </a>
+                <button onclick="toggleMobileMenu(); openBookingModal();" class="w-full bg-gradient-to-r from-gold-600 to-gold-400 text-black font-bold text-xs uppercase tracking-wider py-3 rounded-full">
+                    Book Appointment
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main class="flex-grow pt-20">
+        <!-- Hero Section -->
+        <section class="relative hero-bg min-h-[92vh] flex items-center justify-center py-20 px-4 overflow-hidden">
+            <!-- Decorative Subtle Ambient Light Overlay -->
+            <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-gold-500/10 rounded-full blur-[120px] pointer-events-none"></div>
+
+            <div class="max-w-5xl mx-auto text-center relative z-10 space-y-8">
+                <!-- Google Badge Quick Pill -->
+                <div class="inline-flex items-center gap-3 glass-panel px-4 py-2 rounded-full border border-gold-500/30 shadow-inner-gold">
+                    <div class="flex text-amber-400 text-sm">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star-half-stroke"></i>
+                    </div>
+                    <span class="text-xs font-semibold text-white">4.6</span>
+                    <span class="text-xs text-gray-400">|</span>
+                    <span class="text-xs text-gray-300"><strong class="text-gold-400">207+</strong> Google Reviews</span>
+                    <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+                    <span class="text-[11px] text-emerald-400 font-medium hidden sm:inline">Open Now · Closes 11:50 PM</span>
+                </div>
+
+                <!-- Main Headline -->
+                <h1 class="font-cinzel text-4xl sm:text-6xl md:text-7xl font-extrabold text-white tracking-wide leading-tight">
+                    WHERE PRECISION<br>
+                    <span class="gold-gradient-text">MEETS PERFECTION</span>
+                </h1>
+
+                <!-- Subtitle -->
+                <p class="max-w-2xl mx-auto text-gray-300 text-base sm:text-lg font-light leading-relaxed">
+                    Nad Al Sheba's premier luxury grooming lounge. Experience world-class fades, precision beard sculpting, and bespoke treatments crafted for the modern gentleman.
+                </p>
+
+                <!-- Action CTAs -->
+                <div class="flex flex-wrap justify-center items-center gap-4 pt-4">
+                    <button onclick="openBookingModal()" class="w-full sm:w-auto bg-gradient-to-r from-gold-500 to-gold-400 hover:from-gold-400 hover:to-gold-300 text-black font-bold text-sm tracking-wider uppercase px-8 py-4 rounded-full shadow-gold-glow hover:shadow-gold-glow-lg transition-all transform hover:-translate-y-1">
+                        <i class="fa-regular fa-calendar-check mr-2"></i>Book Your Cut
+                    </button>
+                    
+                    <a href="https://maps.google.com/?q=D69+-+Nad+Al+Sheba+1+-+Nad+Al+Sheba+-+Dubai+-+United+Arab+Emirates" target="_blank" rel="noopener" class="w-full sm:w-auto glass-panel hover:bg-white/10 text-white font-medium text-sm tracking-wider uppercase px-6 py-4 rounded-full border border-white/20 transition-all flex items-center justify-center gap-2">
+                        <i class="fa-solid fa-location-dot text-gold-400"></i>Get Directions
+                    </a>
+
+                    <a href="https://wa.me/971564177776?text=Hello%20House%20of%20Fade,%20I%20would%20like%20to%20inquire%20about%20a%20booking." target="_blank" rel="noopener" class="w-full sm:w-auto bg-emerald-600/80 hover:bg-emerald-600 text-white font-medium text-sm tracking-wider uppercase px-6 py-4 rounded-full transition-all flex items-center justify-center gap-2 border border-emerald-500/40">
+                        <i class="fa-brands fa-whatsapp text-lg"></i>WhatsApp
+                    </a>
+                </div>
+
+                <!-- Feature Highlights Bar -->
+                <div class="pt-12 grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto text-left">
+                    <div class="glass-panel p-4 rounded-xl border border-white/5">
+                        <i class="fa-solid fa-scissors text-gold-400 text-xl mb-2"></i>
+                        <h4 class="text-xs font-bold uppercase tracking-wider text-white">Master Artisans</h4>
+                        <p class="text-[11px] text-gray-400 mt-1">Simo & Rizwan expertise</p>
+                    </div>
+                    <div class="glass-panel p-4 rounded-xl border border-white/5">
+                        <i class="fa-solid fa-clock text-gold-400 text-xl mb-2"></i>
+                        <h4 class="text-xs font-bold uppercase tracking-wider text-white">Late Hours</h4>
+                        <p class="text-[11px] text-gray-400 mt-1">Daily until 11:50 PM</p>
+                    </div>
+                    <div class="glass-panel p-4 rounded-xl border border-white/5">
+                        <i class="fa-solid fa-hot-tub-person text-gold-400 text-xl mb-2"></i>
+                        <h4 class="text-xs font-bold uppercase tracking-wider text-white">VIP Lounge</h4>
+                        <p class="text-[11px] text-gray-400 mt-1">Hot towel & steam care</p>
+                    </div>
+                    <div class="glass-panel p-4 rounded-xl border border-white/5">
+                        <i class="fa-solid fa-location-crosshairs text-gold-400 text-xl mb-2"></i>
+                        <h4 class="text-xs font-bold uppercase tracking-wider text-white">Nad Al Sheba 1</h4>
+                        <p class="text-[11px] text-gray-400 mt-1">Prime Dubai location</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About / Experience Section -->
+        <section id="about" class="py-24 bg-charcoal relative border-y border-white/5">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+                    <!-- Text Content -->
+                    <div class="space-y-6">
+                        <div class="inline-block border-l-2 border-gold-500 pl-3">
+                            <span class="text-xs font-bold tracking-[0.2em] text-gold-400 uppercase">The Grooming Experience</span>
+                        </div>
+                        <h2 class="font-cinzel text-3xl sm:text-4xl font-bold text-white leading-tight">
+                            DUBAI'S FINEST SANCTUARY FOR THE DISTINGUISHED GENTLEMAN
+                        </h2>
+                        <p class="text-gray-300 text-sm sm:text-base leading-relaxed">
+                            Located in the prestige district of <strong class="text-white">Nad Al Sheba 1</strong>, HOUSE OF FADE is more than just a barber shop—it is a bespoke grooming sanctuary. We combine traditional barbering craftsmanship with contemporary styling techniques to deliver sharp, flawless fades and immaculate beard sculpting.
+                        </p>
+                        <p class="text-gray-400 text-sm leading-relaxed">
+                            From the moment you step in, experience an atmosphere built around comfort, meticulous attention to detail, and efficient premium service tailored specifically to your skull shape and personal aesthetic.
+                        </p>
+
+                        <!-- Key Pillars -->
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4">
+                            <div class="flex items-start space-x-3">
+                                <div class="w-8 h-8 rounded-full bg-gold-500/10 flex items-center justify-center text-gold-400 flex-shrink-0 mt-1">
+                                    <i class="fa-solid fa-check text-xs"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-sm font-semibold text-white">Precision Sharp Cuts</h4>
+                                    <p class="text-xs text-gray-400">Flawless skin fades & transitions</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start space-x-3">
+                                <div class="w-8 h-8 rounded-full bg-gold-500/10 flex items-center justify-center text-gold-400 flex-shrink-0 mt-1">
+                                    <i class="fa-solid fa-check text-xs"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-sm font-semibold text-white">VIP Hot Towel Rituals</h4>
+                                    <p class="text-xs text-gray-400">Relaxing facial & razor care</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Image Grid Visual -->
+                    <div class="relative">
+                        <div class="grid grid-cols-2 gap-4">
+                            <div class="space-y-4">
+                                <div class="overflow-hidden rounded-2xl gold-border-glow h-64">
+                                    <img src="https://images.unsplash.com/photo-1622286342621-4bd786c2447c?q=80&w=800&auto=format&fit=crop" alt="Precision Fade Cut" class="w-full h-full object-cover hover:scale-110 transition-transform duration-500">
+                                </div>
+                                <div class="overflow-hidden rounded-2xl gold-border-glow h-44">
+                                    <img src="https://images.unsplash.com/photo-1599351431202-1e0f0137899a?q=80&w=800&auto=format&fit=crop" alt="Beard Sculpting" class="w-full h-full object-cover hover:scale-110 transition-transform duration-500">
+                                </div>
+                            </div>
+                            <div class="space-y-4 pt-8">
+                                <div class="overflow-hidden rounded-2xl gold-border-glow h-44">
+                                    <img src="https://images.unsplash.com/photo-1517832606589-715069686846?q=80&w=800&auto=format&fit=crop" alt="Barber Tools" class="w-full h-full object-cover hover:scale-110 transition-transform duration-500">
+                                </div>
+                                <div class="overflow-hidden rounded-2xl gold-border-glow h-64">
+                                    <img src="https://images.unsplash.com/photo-1585747860715-2ba37e788b70?q=80&w=800&auto=format&fit=crop" alt="Barber Shop Vibe" class="w-full h-full object-cover hover:scale-110 transition-transform duration-500">
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Floating Badge -->
+                        <div class="absolute -bottom-6 -left-6 glass-panel p-4 rounded-2xl border border-gold-500/40 hidden sm:flex items-center gap-4 shadow-xl">
+                            <div class="w-12 h-12 rounded-full bg-gold-500/20 text-gold-400 flex items-center justify-center font-cinzel font-bold text-xl">
+                                4.6
+                            </div>
+                            <div>
+                                <div class="flex text-amber-400 text-xs">
+                                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i>
+                                </div>
+                                <p class="text-xs font-semibold text-white mt-0.5">Top Rated in Nad Al Sheba</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Menu Section -->
+        <section id="services" class="py-24 bg-obsidian relative">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <!-- Section Title -->
+                <div class="text-center max-w-2xl mx-auto mb-16 space-y-3">
+                    <span class="text-xs font-bold tracking-[0.25em] text-gold-400 uppercase">Crafted Menu</span>
+                    <h2 class="font-cinzel text-3xl sm:text-4xl font-bold text-white">SERVICES & PRICING</h2>
+                    <p class="text-gray-400 text-sm">Select a single service or combine treatments for the ultimate house experience.</p>
+                </div>
+
+                <!-- Service List Cards Grid -->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    
+                    <!-- Service Item 1 -->
+                    <div class="glass-panel p-6 rounded-2xl gold-border-glow flex flex-col justify-between group hover:-translate-y-1 transition-all">
+                        <div>
+                            <div class="flex justify-between items-start mb-4">
+                                <span class="p-3 rounded-xl bg-gold-500/10 text-gold-400 text-xl"><i class="fa-solid fa-scissors"></i></span>
+                                <span class="font-cinzel font-bold text-xl text-gold-400">120 AED</span>
+                            </div>
+                            <h3 class="font-cinzel text-xl font-bold text-white group-hover:text-gold-400 transition-colors">Signature House Fade</h3>
+                            <p class="text-gray-400 text-xs mt-2 leading-relaxed">Precision skin fade (drop, taper, low, or high) tailored to your scalp outline with neck razor finish & styling.</p>
+                        </div>
+                        <div class="pt-6 border-t border-white/5 flex items-center justify-between mt-6">
+                            <span class="text-[11px] text-gray-500"><i class="fa-regular fa-clock mr-1"></i>45 Mins</span>
+                            <button onclick="openBookingModal('Signature House Fade')" class="text-xs font-bold text-gold-400 hover:text-gold-300 uppercase tracking-wider flex items-center gap-1">
+                                Select <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Service Item 2 -->
+                    <div class="glass-panel p-6 rounded-2xl gold-border-glow flex flex-col justify-between group hover:-translate-y-1 transition-all">
+                        <div>
+                            <div class="flex justify-between items-start mb-4">
+                                <span class="p-3 rounded-xl bg-gold-500/10 text-gold-400 text-xl"><i class="fa-solid fa-user-ninja"></i></span>
+                                <span class="font-cinzel font-bold text-xl text-gold-400">90 AED</span>
+                            </div>
+                            <h3 class="font-cinzel text-xl font-bold text-white group-hover:text-gold-400 transition-colors">Royal Beard Sculpting</h3>
+                            <p class="text-gray-400 text-xs mt-2 leading-relaxed">Detailed beard trim, sharp line alignment using straight-edge razor, infused with essential oils & hot towel wrap.</p>
+                        </div>
+                        <div class="pt-6 border-t border-white/5 flex items-center justify-between mt-6">
+                            <span class="text-[11px] text-gray-500"><i class="fa-regular fa-clock mr-1"></i>30 Mins</span>
+                            <button onclick="openBookingModal('Royal Beard Sculpting')" class="text-xs font-bold text-gold-400 hover:text-gold-300 uppercase tracking-wider flex items-center gap-1">
+                                Select <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Service Item 3 -->
+                    <div class="glass-panel p-6 rounded-2xl gold-border-glow flex flex-col justify-between group hover:-translate-y-1 transition-all">
+                        <div>
+                            <div class="flex justify-between items-start mb-4">
+                                <span class="p-3 rounded-xl bg-gold-500/10 text-gold-400 text-xl"><i class="fa-solid fa-pump-soap"></i></span>
+                                <span class="font-cinzel font-bold text-xl text-gold-400">100 AED</span>
+                            </div>
+                            <h3 class="font-cinzel text-xl font-bold text-white group-hover:text-gold-400 transition-colors">Premium Haircut & Styling</h3>
+                            <p class="text-gray-400 text-xs mt-2 leading-relaxed">Classic scissor cut or textured top trim, hair wash, scalp massage, blow dry, and premium matte clay styling.</p>
+                        </div>
+                        <div class="pt-6 border-t border-white/5 flex items-center justify-between mt-6">
+                            <span class="text-[11px] text-gray-500"><i class="fa-regular fa-clock mr-1"></i>40 Mins</span>
+                            <button onclick="openBookingModal('Premium Haircut & Styling')" class="text-xs font-bold text-gold-400 hover:text-gold-300 uppercase tracking-wider flex items-center gap-1">
+                                Select <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Service Item 4 - VIP Featured -->
+                    <div class="glass-panel p-6 rounded-2xl border-2 border-gold-500/60 flex flex-col justify-between group hover:-translate-y-1 transition-all relative overflow-hidden shadow-gold-glow">
+                        <div class="absolute top-0 right-0 bg-gold-500 text-black font-bold text-[10px] uppercase tracking-wider px-3 py-1 rounded-bl-lg">
+                            Most Popular
+                        </div>
+                        <div>
+                            <div class="flex justify-between items-start mb-4">
+                                <span class="p-3 rounded-xl bg-gold-500/20 text-gold-300 text-xl"><i class="fa-solid fa-crown"></i></span>
+                                <span class="font-cinzel font-bold text-2xl text-gold-300">220 AED</span>
+                            </div>
+                            <h3 class="font-cinzel text-xl font-bold text-white group-hover:text-gold-400 transition-colors">VIP Full Grooming Package</h3>
+                            <p class="text-gray-400 text-xs mt-2 leading-relaxed">The complete transformation: Signature Fade/Haircut + Royal Beard Sculpting + Black Mask Facial + Hot Towel & Scalp Refresh.</p>
+                        </div>
+                        <div class="pt-6 border-t border-white/10 flex items-center justify-between mt-6">
+                            <span class="text-[11px] text-gold-400 font-medium"><i class="fa-regular fa-clock mr-1"></i>75 Mins</span>
+                            <button onclick="openBookingModal('VIP Full Grooming Package')" class="text-xs font-bold bg-gold-500 text-black px-4 py-2 rounded-lg hover:bg-gold-400 uppercase tracking-wider transition-colors">
+                                Book VIP
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Service Item 5 -->
+                    <div class="glass-panel p-6 rounded-2xl gold-border-glow flex flex-col justify-between group hover:-translate-y-1 transition-all">
+                        <div>
+                            <div class="flex justify-between items-start mb-4">
+                                <span class="p-3 rounded-xl bg-gold-500/10 text-gold-400 text-xl"><i class="fa-solid fa-hand-holding-droplet"></i></span>
+                                <span class="font-cinzel font-bold text-xl text-gold-400">130 AED</span>
+                            </div>
+                            <h3 class="font-cinzel text-xl font-bold text-white group-hover:text-gold-400 transition-colors">Hair Treatment & Scalp Care</h3>
+                            <p class="text-gray-400 text-xs mt-2 leading-relaxed">Deep protein conditioning, keratin treatment, or hair loss control scalp treatment with invigorating steam session.</p>
+                        </div>
+                        <div class="pt-6 border-t border-white/5 flex items-center justify-between mt-6">
+                            <span class="text-[11px] text-gray-500"><i class="fa-regular fa-clock mr-1"></i>35 Mins</span>
+                            <button onclick="openBookingModal('Hair Treatment & Scalp Care')" class="text-xs font-bold text-gold-400 hover:text-gold-300 uppercase tracking-wider flex items-center gap-1">
+                                Select <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Service Item 6 -->
+                    <div class="glass-panel p-6 rounded-2xl gold-border-glow flex flex-col justify-between group hover:-translate-y-1 transition-all">
+                        <div>
+                            <div class="flex justify-between items-start mb-4">
+                                <span class="p-3 rounded-xl bg-gold-500/10 text-gold-400 text-xl"><i class="fa-solid fa-child"></i></span>
+                                <span class="font-cinzel font-bold text-xl text-gold-400">80 AED</span>
+                            </div>
+                            <h3 class="font-cinzel text-xl font-bold text-white group-hover:text-gold-400 transition-colors">Junior Gentleman Cut</h3>
+                            <p class="text-gray-400 text-xs mt-2 leading-relaxed">Specialized haircut for kids under 12 years. Patient, stylish cuts designed with ultimate care and precision.</p>
+                        </div>
+                        <div class="pt-6 border-t border-white/5 flex items-center justify-between mt-6">
+                            <span class="text-[11px] text-gray-500"><i class="fa-regular fa-clock mr-1"></i>30 Mins</span>
+                            <button onclick="openBookingModal('Junior Gentleman Cut')" class="text-xs font-bold text-gold-400 hover:text-gold-300 uppercase tracking-wider flex items-center gap-1">
+                                Select <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Featured Barbers Section -->
+        <section id="barbers" class="py-24 bg-charcoal relative border-t border-white/5">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-2xl mx-auto mb-16 space-y-3">
+                    <span class="text-xs font-bold tracking-[0.25em] text-gold-400 uppercase">Master Craftsmen</span>
+                    <h2 class="font-cinzel text-3xl sm:text-4xl font-bold text-white">MEET OUR BARBER SPECIALISTS</h2>
+                    <p class="text-gray-400 text-sm">Highly praised in Google reviews for exceptional technical skills and personal attention.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                    <!-- Barber 1: Simo -->
+                    <div class="glass-panel p-8 rounded-3xl gold-border-glow flex flex-col sm:flex-row items-center gap-6 group">
+                        <div class="w-32 h-32 rounded-2xl overflow-hidden border-2 border-gold-500/40 flex-shrink-0 relative">
+                            <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=600&auto=format&fit=crop" alt="Barber Simo" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        </div>
+                        <div class="space-y-3 text-center sm:text-left">
+                            <div>
+                                <span class="text-[10px] tracking-widest text-gold-400 uppercase font-bold">Top Recommended</span>
+                                <h3 class="font-cinzel text-2xl font-bold text-white">SIMO</h3>
+                                <p class="text-xs text-gray-400">Master of Fades & Razor Lineups</p>
+                            </div>
+                            <p class="text-gray-300 text-xs italic">
+                                "Great service and beautiful fades done by the best Simo!"
+                            </p>
+                            <button onclick="openBookingModal('', 'Simo')" class="inline-flex items-center gap-2 text-xs font-bold text-gold-400 border border-gold-500/30 px-4 py-2 rounded-full hover:bg-gold-500 hover:text-black transition-all">
+                                <i class="fa-regular fa-calendar-check"></i> Book with Simo
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Barber 2: Rizwan -->
+                    <div class="glass-panel p-8 rounded-3xl gold-border-glow flex flex-col sm:flex-row items-center gap-6 group">
+                        <div class="w-32 h-32 rounded-2xl overflow-hidden border-2 border-gold-500/40 flex-shrink-0 relative">
+                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=600&auto=format&fit=crop" alt="Barber Rizwan" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        </div>
+                        <div class="space-y-3 text-center sm:text-left">
+                            <div>
+                                <span class="text-[10px] tracking-widest text-gold-400 uppercase font-bold">Precision Cut Specialist</span>
+                                <h3 class="font-cinzel text-2xl font-bold text-white">RIZWAN</h3>
+                                <p class="text-xs text-gray-400">Styling & Custom Haircuts</p>
+                            </div>
+                            <p class="text-gray-300 text-xs italic">
+                                "Rizwan gave me a very nice cut and understood exactly what I needed."
+                            </p>
+                            <button onclick="openBookingModal('', 'Rizwan')" class="inline-flex items-center gap-2 text-xs font-bold text-gold-400 border border-gold-500/30 px-4 py-2 rounded-full hover:bg-gold-500 hover:text-black transition-all">
+                                <i class="fa-regular fa-calendar-check"></i> Book with Rizwan
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Customer Reviews Section -->
+        <section id="reviews" class="py-24 bg-obsidian relative overflow-hidden">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                <div class="text-center max-w-2xl mx-auto mb-16 space-y-3">
+                    <span class="text-xs font-bold tracking-[0.25em] text-gold-400 uppercase">Client Testimonials</span>
+                    <h2 class="font-cinzel text-3xl sm:text-4xl font-bold text-white">4.6 RATING ON GOOGLE</h2>
+                    <p class="text-gray-400 text-sm">Based on over 207+ verified client reviews in Dubai.</p>
+                </div>
+
+                <!-- Reviews Grid -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    
+                    <!-- Review Card 1 -->
+                    <div class="glass-panel p-6 rounded-2xl border border-white/10 relative flex flex-col justify-between">
+                        <div class="space-y-4">
+                            <div class="flex items-center justify-between">
+                                <div class="flex text-amber-400 text-xs">
+                                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                                </div>
+                                <i class="fa-brands fa-google text-gray-500 text-lg"></i>
+                            </div>
+                            <p class="text-gray-300 text-sm italic leading-relaxed">
+                                "The barber, Rizwan gave me a very nice cut and understood what I needed. Overall it was a good experience!"
+                            </p>
+                        </div>
+                        <div class="mt-6 pt-4 border-t border-white/5 flex items-center gap-3">
+                            <div class="w-8 h-8 rounded-full bg-gold-500/20 text-gold-400 font-bold flex items-center justify-center text-xs">
+                                A
+                            </div>
+                            <div>
+                                <h4 class="text-xs font-bold text-white">Verified Customer</h4>
+                                <span class="text-[10px] text-gray-500">Google Reviewer</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Review Card 2 -->
+                    <div class="glass-panel p-6 rounded-2xl border border-gold-500/30 relative flex flex-col justify-between shadow-gold-glow">
+                        <div class="space-y-4">
+                            <div class="flex items-center justify-between">
+                                <div class="flex text-amber-400 text-xs">
+                                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                                </div>
+                                <i class="fa-brands fa-google text-gray-500 text-lg"></i>
+                            </div>
+                            <p class="text-gray-300 text-sm italic leading-relaxed">
+                                "With incredible attention to detail—my fade has never looked sharper. The vibe is welcoming and the service is efficient. Highly recommended for a premium cut!"
+                            </p>
+                        </div>
+                        <div class="mt-6 pt-4 border-t border-white/5 flex items-center gap-3">
+                            <div class="w-8 h-8 rounded-full bg-gold-500/20 text-gold-400 font-bold flex items-center justify-center text-xs">
+                                M
+                            </div>
+                            <div>
+                                <h4 class="text-xs font-bold text-white">Dubai Resident</h4>
+                                <span class="text-[10px] text-gold-400">Local Guide</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Review Card 3 -->
+                    <div class="glass-panel p-6 rounded-2xl border border-white/10 relative flex flex-col justify-between">
+                        <div class="space-y-4">
+                            <div class="flex items-center justify-between">
+                                <div class="flex text-amber-400 text-xs">
+                                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                                </div>
+                                <i class="fa-brands fa-google text-gray-500 text-lg"></i>
+                            </div>
+                            <p class="text-gray-300 text-sm italic leading-relaxed">
+                                "Great service and beautiful fades done by the best Simo! Best barbershop experience in Nad Al Sheba."
+                            </p>
+                        </div>
+                        <div class="mt-6 pt-4 border-t border-white/5 flex items-center gap-3">
+                            <div class="w-8 h-8 rounded-full bg-gold-500/20 text-gold-400 font-bold flex items-center justify-center text-xs">
+                                S
+                            </div>
+                            <div>
+                                <h4 class="text-xs font-bold text-white">Sari K.</h4>
+                                <span class="text-[10px] text-gray-500">Google Reviewer</span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="mt-12 text-center">
+                    <a href="https://maps.google.com/?q=D69+-+Nad+Al+Sheba+1+-+Nad+Al+Sheba+-+Dubai+-+United+Arab+Emirates" target="_blank" class="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-gold-400 hover:text-white border-b border-gold-400 pb-1 transition-all">
+                        <span>Read all 207+ Google Reviews</span>
+                        <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Gallery Grid Section -->
+        <section class="py-20 bg-charcoal border-y border-white/5">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-2xl mx-auto mb-12">
+                    <span class="text-xs font-bold tracking-[0.25em] text-gold-400 uppercase">Visual Portfolio</span>
+                    <h2 class="font-cinzel text-3xl font-bold text-white mt-1">THE FADE GALLERY</h2>
+                </div>
+
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                    <div class="relative overflow-hidden rounded-xl h-64 gold-border-glow group">
+                        <img src="https://images.unsplash.com/photo-1622286342621-4bd786c2447c?q=80&w=800&auto=format&fit=crop" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" alt="Fade cut">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity p-4 flex items-end">
+                            <span class="text-xs font-bold text-gold-400 uppercase">Low Skin Fade</span>
+                        </div>
+                    </div>
+                    <div class="relative overflow-hidden rounded-xl h-64 gold-border-glow group">
+                        <img src="https://images.unsplash.com/photo-1503951914875-452162b0f3f1?q=80&w=800&auto=format&fit=crop" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" alt="Beard line">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity p-4 flex items-end">
+                            <span class="text-xs font-bold text-gold-400 uppercase">Beard Sculpt</span>
+                        </div>
+                    </div>
+                    <div class="relative overflow-hidden rounded-xl h-64 gold-border-glow group">
+                        <img src="https://images.unsplash.com/photo-1599351431202-1e0f0137899a?q=80&w=800&auto=format&fit=crop" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" alt="Taper Fade">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity p-4 flex items-end">
+                            <span class="text-xs font-bold text-gold-400 uppercase">Mid Taper Fade</span>
+                        </div>
+                    </div>
+                    <div class="relative overflow-hidden rounded-xl h-64 gold-border-glow group">
+                        <img src="https://images.unsplash.com/photo-1517832606589-715069686846?q=80&w=800&auto=format&fit=crop" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" alt="Barber Chair">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity p-4 flex items-end">
+                            <span class="text-xs font-bold text-gold-400 uppercase">Luxury Suite</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Location & Contact Section -->
+        <section id="location" class="py-24 bg-obsidian relative">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                    
+                    <!-- Contact Info Card -->
+                    <div class="space-y-8">
+                        <div>
+                            <span class="text-xs font-bold tracking-[0.25em] text-gold-400 uppercase">Visit Us</span>
+                            <h2 class="font-cinzel text-3xl sm:text-4xl font-bold text-white mt-1">NAD AL SHEBA LOCATION</h2>
+                            <p class="text-gray-400 text-sm mt-2">Conveniently located with easy parking and late opening hours in Dubai.</p>
+                        </div>
+
+                        <div class="space-y-6">
+                            <!-- Address -->
+                            <div class="flex items-start gap-4">
+                                <div class="w-12 h-12 rounded-xl bg-gold-500/10 border border-gold-500/30 flex items-center justify-center text-gold-400 flex-shrink-0">
+                                    <i class="fa-solid fa-map-pin text-lg"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-sm font-bold text-white uppercase tracking-wider">Address</h4>
+                                    <p class="text-gray-300 text-sm mt-1">D69 - Nad Al Sheba 1 - Nad Al Sheba</p>
+                                    <p class="text-gray-400 text-xs">Dubai - United Arab Emirates</p>
+                                </div>
+                            </div>
+
+                            <!-- Hours -->
+                            <div class="flex items-start gap-4">
+                                <div class="w-12 h-12 rounded-xl bg-gold-500/10 border border-gold-500/30 flex items-center justify-center text-gold-400 flex-shrink-0">
+                                    <i class="fa-solid fa-clock text-lg"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-sm font-bold text-white uppercase tracking-wider">Working Hours</h4>
+                                    <p class="text-emerald-400 text-sm font-medium mt-1">Open Daily</p>
+                                    <p class="text-gray-300 text-xs">09:00 AM – 11:50 PM</p>
+                                </div>
+                            </div>
+
+                            <!-- Phone -->
+                            <div class="flex items-start gap-4">
+                                <div class="w-12 h-12 rounded-xl bg-gold-500/10 border border-gold-500/30 flex items-center justify-center text-gold-400 flex-shrink-0">
+                                    <i class="fa-solid fa-phone text-lg"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-sm font-bold text-white uppercase tracking-wider">Direct Phone</h4>
+                                    <a href="tel:+971564177776" class="text-gold-400 font-semibold text-sm hover:underline mt-1 block">
+                                        +971 56 417 7776
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Buttons Bar -->
+                        <div class="flex flex-wrap gap-4 pt-4">
+                            <a href="tel:+971564177776" class="bg-gold-500 hover:bg-gold-400 text-black font-bold text-xs uppercase tracking-wider px-6 py-3.5 rounded-xl transition-all">
+                                <i class="fa-solid fa-phone mr-2"></i>Call Salon
+                            </a>
+                            <a href="https://wa.me/971564177776" target="_blank" class="bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs uppercase tracking-wider px-6 py-3.5 rounded-xl transition-all">
+                                <i class="fa-brands fa-whatsapp mr-2"></i>WhatsApp
+                            </a>
+                            <a href="https://maps.google.com/?q=D69+-+Nad+Al+Sheba+1+-+Nad+Al+Sheba+-+Dubai+-+United+Arab+Emirates" target="_blank" class="glass-panel text-white font-bold text-xs uppercase tracking-wider px-6 py-3.5 rounded-xl border border-white/20 hover:bg-white/10 transition-all">
+                                <i class="fa-solid fa-location-arrow mr-2"></i>Maps
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Interactive Styled Map Box Placeholder -->
+                    <div class="glass-panel p-4 rounded-3xl gold-border-glow overflow-hidden relative min-h-[380px] flex flex-col justify-between">
+                        <!-- Mock Map Background Styling -->
+                        <div class="absolute inset-0 bg-[#171A21] flex items-center justify-center overflow-hidden">
+                            <!-- Visual Stylized Grid Map Background -->
+                            <div class="absolute inset-0 opacity-20 bg-[radial-gradient(#D4AF37_1px,transparent_1px)] [background-size:16px_16px]"></div>
+                            
+                            <!-- Pin Glow Effect -->
+                            <div class="relative z-10 text-center space-y-3">
+                                <div class="w-16 h-16 rounded-full bg-gold-500/20 border-2 border-gold-500 flex items-center justify-center text-gold-400 mx-auto animate-bounce shadow-gold-glow">
+                                    <i class="fa-solid fa-location-dot text-2xl"></i>
+                                </div>
+                                <h3 class="font-cinzel text-xl font-bold text-white">HOUSE OF FADE</h3>
+                                <p class="text-xs text-gold-400">D69 - Nad Al Sheba 1 - Dubai</p>
+                            </div>
+                        </div>
+
+                        <!-- Card Header overlay -->
+                        <div class="relative z-10 glass-panel p-3 rounded-xl flex items-center justify-between border border-white/10">
+                            <span class="text-xs font-semibold text-white"><i class="fa-solid fa-compass text-gold-400 mr-1.5"></i>Nad Al Sheba 1</span>
+                            <span class="text-[10px] bg-emerald-500/20 text-emerald-400 border border-emerald-500/30 px-2 py-0.5 rounded-full font-semibold">Open Until 11:50 PM</span>
+                        </div>
+
+                        <!-- Card Footer CTA overlay -->
+                        <div class="relative z-10 glass-panel p-4 rounded-xl border border-white/10 text-center">
+                            <p class="text-xs text-gray-300 mb-3">Open Google Maps for turn-by-turn navigation</p>
+                            <a href="https://maps.google.com/?q=D69+-+Nad+Al+Sheba+1+-+Nad+Al+Sheba+-+Dubai+-+United+Arab+Emirates" target="_blank" class="w-full bg-gradient-to-r from-gold-500 to-gold-400 text-black font-bold text-xs uppercase tracking-wider py-2.5 rounded-lg block hover:brightness-110 transition-all">
+                                Open in Google Maps
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-black border-t border-white/10 py-12 text-xs text-gray-500">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-6">
+            <div class="flex items-center space-x-3">
+                <span class="font-cinzel text-lg font-bold text-white tracking-widest">HOUSE OF FADE</span>
+                <span class="text-gray-600">|</span>
+                <span>Dubai Luxury Barber Shop</span>
+            </div>
+            
+            <p class="text-center md:text-left">
+                © <span id="currentYear"></span> HOUSE OF FADE. All rights reserved. Nad Al Sheba 1, Dubai, UAE.
+            </p>
+
+            <div class="flex items-center space-x-4 text-base text-gray-400">
+                <a href="https://wa.me/971564177776" class="hover:text-gold-400 transition-colors"><i class="fa-brands fa-whatsapp"></i></a>
+                <a href="tel:+971564177776" class="hover:text-gold-400 transition-colors"><i class="fa-solid fa-phone"></i></a>
+                <a href="https://maps.google.com/?q=D69+-+Nad+Al+Sheba+1+-+Nad+Al+Sheba+-+Dubai" class="hover:text-gold-400 transition-colors"><i class="fa-solid fa-location-dot"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Interactive Appointment Booking Modal -->
+    <div id="bookingModal" class="fixed inset-0 z-50 hidden flex items-center justify-center p-4 bg-black/80 backdrop-blur-md">
+        <div class="glass-panel border border-gold-500/40 rounded-3xl max-w-lg w-full max-h-[90vh] overflow-y-auto p-6 sm:p-8 relative shadow-gold-glow">
+            <!-- Close Button -->
+            <button onclick="closeBookingModal()" class="absolute top-5 right-5 text-gray-400 hover:text-white text-xl">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+            <!-- Modal Header -->
+            <div class="text-center mb-6">
+                <span class="text-[10px] font-bold tracking-[0.2em] text-gold-400 uppercase">Reservation</span>
+                <h3 class="font-cinzel text-2xl font-bold text-white mt-1">BOOK YOUR APPOINTMENT</h3>
+                <p class="text-xs text-gray-400">Select your barber, service, and preferred timing.</p>
+            </div>
+
+            <!-- Booking Form -->
+            <form id="bookingForm" onsubmit="handleBookingSubmit(event)" class="space-y-4">
+                
+                <!-- Barber Choice -->
+                <div>
+                    <label class="block text-xs font-semibold uppercase text-gray-300 mb-2">1. Select Barber Specialist</label>
+                    <div class="grid grid-cols-3 gap-2">
+                        <label class="cursor-pointer">
+                            <input type="radio" name="barber" value="Any Available" class="peer hidden" checked>
+                            <div class="p-3 text-center rounded-xl border border-white/10 peer-checked:border-gold-500 peer-checked:bg-gold-500/20 text-xs font-medium text-gray-300 peer-checked:text-gold-400 transition-all">
+                                Any Barber
+                            </div>
+                        </label>
+                        <label class="cursor-pointer">
+                            <input type="radio" name="barber" value="Simo" id="barberSimoRadio" class="peer hidden">
+                            <div class="p-3 text-center rounded-xl border border-white/10 peer-checked:border-gold-500 peer-checked:bg-gold-500/20 text-xs font-medium text-gray-300 peer-checked:text-gold-400 transition-all">
+                                Simo (Fade Master)
+                            </div>
+                        </label>
+                        <label class="cursor-pointer">
+                            <input type="radio" name="barber" value="Rizwan" id="barberRizwanRadio" class="peer hidden">
+                            <div class="p-3 text-center rounded-xl border border-white/10 peer-checked:border-gold-500 peer-checked:bg-gold-500/20 text-xs font-medium text-gray-300 peer-checked:text-gold-400 transition-all">
+                                Rizwan (Precision)
+                            </div>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Service Selector -->
+                <div>
+                    <label class="block text-xs font-semibold uppercase text-gray-300 mb-1">2. Service</label>
+                    <select id="serviceSelect" required class="w-full bg-obsidian border border-white/10 rounded-xl p-3 text-xs text-white focus:border-gold-500 focus:outline-none">
+                        <option value="Signature House Fade">Signature House Fade (120 AED)</option>
+                        <option value="Royal Beard Sculpting">Royal Beard Sculpting & Hot Towel (90 AED)</option>
+                        <option value="Premium Haircut & Styling">Premium Haircut & Styling (100 AED)</option>
+                        <option value="VIP Full Grooming Package">VIP Full Grooming Package (220 AED)</option>
+                        <option value="Hair Treatment & Scalp Care">Hair Treatment & Scalp Care (130 AED)</option>
+                        <option value="Junior Gentleman Cut">Junior Gentleman Cut (80 AED)</option>
+                    </select>
+                </div>
+
+                <!-- Date & Time Slot -->
+                <div class="grid grid-cols-2 gap-3">
+                    <div>
+                        <label class="block text-xs font-semibold uppercase text-gray-300 mb-1">Date</label>
+                        <input type="date" required id="bookingDate" class="w-full bg-obsidian border border-white/10 rounded-xl p-3 text-xs text-white focus:border-gold-500 focus:outline-none">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-semibold uppercase text-gray-300 mb-1">Time</label>
+                        <select required id="bookingTime" class="w-full bg-obsidian border border-white/10 rounded-xl p-3 text-xs text-white focus:border-gold-500 focus:outline-none">
+                            <option value="02:00 PM">02:00 PM</option>
+                            <option value="03:00 PM">03:00 PM</option>
+                            <option value="04:00 PM">04:00 PM</option>
+                            <option value="05:00 PM">05:00 PM</option>
+                            <option value="06:00 PM">06:00 PM</option>
+                            <option value="07:00 PM">07:00 PM</option>
+                            <option value="08:00 PM">08:00 PM</option>
+                            <option value="09:00 PM">09:00 PM</option>
+                            <option value="10:00 PM">10:00 PM</option>
+                            <option value="11:00 PM">11:00 PM</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Customer Details -->
+                <div class="space-y-3 pt-2">
+                    <input type="text" placeholder="Full Name" required id="clientName" class="w-full bg-obsidian border border-white/10 rounded-xl p-3 text-xs text-white focus:border-gold-500 focus:outline-none">
+                    <input type="tel" placeholder="Phone Number / WhatsApp (+971...)" required id="clientPhone" class="w-full bg-obsidian border border-white/10 rounded-xl p-3 text-xs text-white focus:border-gold-500 focus:outline-none">
+                </div>
+
+                <!-- Submit Button -->
+                <button type="submit" class="w-full bg-gradient-to-r from-gold-500 to-gold-400 text-black font-bold text-xs uppercase tracking-wider py-3.5 rounded-xl mt-4 shadow-gold-glow hover:brightness-110 transition-all">
+                    Confirm & Send Booking Request
+                </button>
+            </form>
+
+            <!-- Success Box (Hidden by default) -->
+            <div id="bookingSuccess" class="hidden text-center space-y-4 py-8">
+                <div class="w-16 h-16 rounded-full bg-emerald-500/20 text-emerald-400 border border-emerald-500/40 flex items-center justify-center mx-auto text-2xl">
+                    <i class="fa-solid fa-check"></i>
+                </div>
+                <h4 class="font-cinzel text-xl font-bold text-white">APPOINTMENT REQUESTED!</h4>
+                <p class="text-xs text-gray-300 leading-relaxed" id="successDetails">
+                    Thank you! Redirecting you to WhatsApp to instantly confirm your booking slot with House of Fade...
+                </p>
+                <button onclick="closeBookingModal()" class="text-xs font-bold text-gold-400 uppercase tracking-wider border-b border-gold-400 pb-0.5">
+                    Done
+                </button>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Embedded Scripts -->
+    <script>
+        // Set year in footer
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+
+        // Default booking date to today
+        document.getElementById('bookingDate').valueAsDate = new Date();
+
+        // Mobile Menu Toggle
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobileMenu');
+            menu.classList.toggle('hidden');
+        }
+
+        // Open Modal with Pre-selections
+        function openBookingModal(serviceName = '', barberName = '') {
+            const modal = document.getElementById('bookingModal');
+            const serviceSelect = document.getElementById('serviceSelect');
+            
+            // Set service if provided
+            if (serviceName && serviceSelect) {
+                for (let i = 0; i < serviceSelect.options.length; i++) {
+                    if (serviceSelect.options[i].value.includes(serviceName)) {
+                        serviceSelect.selectedIndex = i;
+                        break;
+                    }
+                }
+            }
+
+            // Set barber if provided
+            if (barberName === 'Simo') {
+                document.getElementById('barberSimoRadio').checked = true;
+            } else if (barberName === 'Rizwan') {
+                document.getElementById('barberRizwanRadio').checked = true;
+            }
+
+            modal.classList.remove('hidden');
+        }
+
+        function closeBookingModal() {
+            const modal = document.getElementById('bookingModal');
+            modal.classList.add('hidden');
+            // Reset state
+            document.getElementById('bookingForm').classList.remove('hidden');
+            document.getElementById('bookingSuccess').classList.add('hidden');
+        }
+
+        // Handle Booking Form Submission
+        function handleBookingSubmit(event) {
+            event.preventDefault();
+
+            const barber = document.querySelector('input[name="barber"]:checked').value;
+            const service = document.getElementById('serviceSelect').value;
+            const date = document.getElementById('bookingDate').value;
+            const time = document.getElementById('bookingTime').value;
+            const name = document.getElementById('clientName').value;
+            const phone = document.getElementById('clientPhone').value;
+
+            // Form message for WhatsApp
+            const message = `Hello House of Fade! I would like to book an appointment:%0A%0A` +
+                `• *Name:* ${encodeURIComponent(name)}%0A` +
+                `• *Phone:* ${encodeURIComponent(phone)}%0A` +
+                `• *Barber:* ${encodeURIComponent(barber)}%0A` +
+                `• *Service:* ${encodeURIComponent(service)}%0A` +
+                `• *Date:* ${encodeURIComponent(date)}%0A` +
+                `• *Time:* ${encodeURIComponent(time)}`;
+
+            // Hide Form, Show Success UI
+            document.getElementById('bookingForm').classList.add('hidden');
+            document.getElementById('bookingSuccess').classList.remove('hidden');
+
+            // Automatically open WhatsApp after brief pause
+            setTimeout(() => {
+                window.open(`https://wa.me/971564177776?text=${message}`, '_blank');
+            }, 1200);
+        }
+
+        // Close modal when clicking outside content box
+        window.onclick = function(event) {
+            const modal = document.getElementById('bookingModal');
+            if (event.target === modal) {
+                closeBookingModal();
+            }
+        };
+    </script>
+</body>
+</html>
